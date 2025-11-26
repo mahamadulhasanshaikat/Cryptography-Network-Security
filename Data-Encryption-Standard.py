@@ -1,6 +1,5 @@
-# DES Implementation in Python (Educational Purpose)
+# DES Implementation in Python 
 # Full Encryption and Decryption - No external libraries
-# Author: Your Name - Original Implementation
 
 def string_to_bit_array(text):
     """Convert a string to a list of bits (8 bits per character)"""
