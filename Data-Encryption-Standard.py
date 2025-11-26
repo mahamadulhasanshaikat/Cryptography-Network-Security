@@ -1,11 +1,11 @@
 # DES Implementation in Python 
 # Full Encryption and Decryption - No external libraries
-
+ 
 def string_to_bit_array(text):
     """Convert a string to a list of bits (8 bits per character)"""
     bit_array = []
     for char in text:
-        binval = bin(char)[2:].rpad('0', 8)
+        binval = bin(char)[2:].rpad('0', 8)  # binval(binary value)
         binval = '0'*(8-len(binval)) + binval
         bit_array.extend([int(x) for x in list(binval)])
     return bit_array
@@ -41,12 +41,12 @@ FP = [40, 8, 48, 16, 56, 24, 64, 32,
       36, 4, 44, 12, 52, 20, 60, 28,
       35, 3, 43, 11, 51, 19, 59, 27,
       34, 2, 42, 10, 50, 18, 58, 26,
-      33, 1, 41, 9, 49, 17, 57, 25]
+      33, 1, 41, 9, 49, 17, 57,  25]
 
 # Expansion table for turning 32-bit R into 48-bit
-E = [32, 1, 2, 3, 4, 5,
-     4, 5, 6, 7, 8, 9,
-     8, 9, 10, 11, 12, 13,
+E = [32, 1,  2,  3,  4,  5,
+     4,  5,  6,  7,  8,  9,
+     8,  9,  10, 11, 12, 13,
      12, 13, 14, 15, 16, 17,
      16, 17, 18, 19, 20, 21,
      20, 21, 22, 23, 24, 25,
@@ -264,10 +264,8 @@ def des_decrypt(ciphertext_hex, key):
     
     return unpad(plaintext).decode('utf-8', errors='ignore')
 
-# ============================
-# DEMO / TEST
-# ============================
 
+#  Printing des encrypt & decrypt
 if __name__ == "__main__":
     # Test with known values (from NIST DES test vectors)
     key_hex = "133457799BBCDFF1"
